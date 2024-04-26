@@ -12,7 +12,7 @@
 #elif (ESP_IDF_VERSION_MAJOR == 5) && (ESP_IDF_VERSION_MINOR == 1)
 #include "hal/usb_fsls_phy_ll.h"
 #else
-#include "hal/usb_phy_ll.h"
+#include "hal/usb_fsls_phy_ll.h"
 #endif
 
 static char *TAG = "NVS: ui-events";
@@ -27,7 +27,7 @@ void EventBtnSetupClick(lv_event_t *e)
 #elif (ESP_IDF_VERSION_MAJOR == 5) && (ESP_IDF_VERSION_MINOR == 1)
     usb_fsls_phy_ll_int_jtag_enable(&USB_SERIAL_JTAG);
 #else
-    usb_phy_ll_int_jtag_enable(&USB_SERIAL_JTAG);
+    usb_fsls_phy_ll_int_jtag_enable(&USB_SERIAL_JTAG);
 #endif
     esp_restart();
 }
